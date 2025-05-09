@@ -32,6 +32,12 @@ export default function Login() {
     const errorMessage = useActionData()
     const message = useLoaderData()
     const navigation = useNavigation()
+    const [dummy, componentReloader] = React.useState(0)
+
+    function logOut() {
+        localStorage.removeItem("loggedin")
+        componentReloader(dummy + 1)
+    }
 
     return (
         <div className="login-container">
@@ -56,12 +62,20 @@ export default function Login() {
                 />
                 <button
                     disabled={navigation.state === "submitting"}
+                    type="submit"
                 >
                     {navigation.state === "submitting"
                         ? "Logging in..."
                         : "Log in"
                     }
                 </button>
+                {localStorage.getItem("loggedin") &&
+                <button
+                    onClick={logOut}
+                    type="button"
+                >
+                    Log out
+                </button>}
             </Form>
         </div>
     )

@@ -16,12 +16,28 @@ const firebaseConfig = {
     storageBucket: "vanlife2061.firebasestorage.app",
     messagingSenderId: "974963409078",
     appId: "1:974963409078:web:1a47345925c9f677e52617"
-};
+}
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 
 const vansCollectionRef = collection(db, "vans")
+
+/*
+// TO ADD VANS TO FIRESTORE
+
+import vans from "./firestore_data.json"
+
+for (const van of vans) {
+    try {
+        const docRef = await addDoc(vansCollectionRef, van);
+        console.log(`Added van with Firestore ID: ${docRef.id}`);
+    } catch (err) {
+        console.error("Error adding document:", err);
+    }
+}
+*/ 
+
 
 export async function getVans() {
     const querySnapshot = await getDocs(vansCollectionRef)
