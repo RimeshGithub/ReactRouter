@@ -1,6 +1,6 @@
 {
   "name": "react-router",
-  "description": "https://scrimba.com/learn-react-router-6-c06/~048",
+  "description": "https://scrimba.com/learn-react-router-6-c06/~04d",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -8,10 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^11.7.1",
+    "miragejs": "0.1.46",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.4.3",
-    "miragejs": "0.1.46",
     "vite": "latest"
   },
   "devDependencies": {
